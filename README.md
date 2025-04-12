@@ -157,6 +157,8 @@ except urllib.error.HTTPError as error:
         print(error.read().decode("utf8", 'ignore'))
 
 
+-------------------------------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/c353229f-5b45-4a47-ac9b-49ef8c125a8e)
 
 
 
