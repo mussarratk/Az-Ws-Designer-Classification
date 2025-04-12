@@ -44,4 +44,62 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![image](https://github.com/user-attachments/assets/74e3a315-4acc-4305-b91d-e49acbe8cb3f)
 ![image](https://github.com/user-attachments/assets/28e33745-7fbb-409c-b6a6-670fc7538ea3)
 ![image](https://github.com/user-attachments/assets/a3a3f39f-5995-46a8-940e-4faf25c3f75c)
+![image](https://github.com/user-attachments/assets/f618e28c-2d70-43e4-a574-3d076b4dd7cc)
+![image](https://github.com/user-attachments/assets/87cb632e-79ca-4fc1-b683-9de464aa4efe)
+
+![image](https://github.com/user-attachments/assets/80dae52e-09fc-4a34-9932-9d20d05036c0)
+
+![image](https://github.com/user-attachments/assets/f601dedc-5929-4eaa-8313-c5cb3aec2666)
+- Deploy
+![image](https://github.com/user-attachments/assets/718bc6a6-ea48-4237-b587-15dd3149de62)
+
+![image](https://github.com/user-attachments/assets/41a697f0-ccac-4fd3-b60d-7b678d0be168)
+![image](https://github.com/user-attachments/assets/9a25a577-5918-4d1f-8c71-bcee44bd3801)
+-----------------------------------------------
+
+import urllib.request
+import json
+
+# Request data goes here
+# The example below assumes JSON formatting which may be updated
+# depending on the format your endpoint expects.
+# More information can be found here:
+# https://docs.microsoft.com/azure/machine-learning/how-to-deploy-advanced-entry-script
+data = {}
+
+body = str.encode(json.dumps(data))
+
+url = 'http://7aaa67a6-2c2f-4114-b2dc-d93bd25c28c0.uksouth.azurecontainer.io/score'
+# Replace this with the primary/secondary key, AMLToken, or Microsoft Entra ID token for the endpoint
+api_key = ''
+if not api_key:
+    raise Exception("A key should be provided to invoke the endpoint")
+
+
+headers = {'Content-Type':'application/json', 'Accept': 'application/json', 'Authorization':('Bearer '+ api_key)}
+
+req = urllib.request.Request(url, body, headers)
+
+try:
+    response = urllib.request.urlopen(req)
+
+    result = response.read()
+    print(result)
+except urllib.error.HTTPError as error:
+    print("The request failed with status code: " + str(error.code))
+
+    # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
+    print(error.info())
+    print(error.read().decode("utf8", 'ignore'))
+
+----------------------------------------------------------------------------------------------------------------------------------
+in advanced setting true for application insights
+
+
+
+
+
+
+
+
 
