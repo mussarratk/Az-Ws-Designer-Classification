@@ -161,7 +161,9 @@ except urllib.error.HTTPError as error:
 ![image](https://github.com/user-attachments/assets/c353229f-5b45-4a47-ac9b-49ef8c125a8e)
 ![image](https://github.com/user-attachments/assets/bb60e8ed-49de-4d65-9d07-ee8539507d23)
 ![image](https://github.com/user-attachments/assets/53e527c1-f3ee-4334-be84-e293f2fec7f0)
+![image](https://github.com/user-attachments/assets/9cadba7f-4010-4c8e-babf-746a3aec16d6)
 
+![image](https://github.com/user-attachments/assets/d633c221-5f69-49be-a933-29b629ab0b66)
 
 
 
