@@ -94,7 +94,67 @@ except urllib.error.HTTPError as error:
 
 ----------------------------------------------------------------------------------------------------------------------------------
 in advanced setting true for application insights
+![image](https://github.com/user-attachments/assets/5fab4658-8776-4851-b252-1262b527d733)
+![image](https://github.com/user-attachments/assets/3343fd36-ae88-4e14-bf14-b97d49539f5c)
+![image](https://github.com/user-attachments/assets/daae624b-155d-4f48-8736-3826d2bb81b2)
+![image](https://github.com/user-attachments/assets/2cfc908a-415e-4b54-8a20-188aa82a727c)
+# Tested in Notebook SDK V2
+----------------------------------------------------------------------------
+import urllib.request
+import json
 
+# Request data goes here
+data = {
+    "Inputs": {
+        "input1": [
+            {
+                "PatientID": 1882185,
+                "Pregnancies": 9,
+                "PlasmaGlucose": 104,
+                "DiastolicBloodPressure": 51,
+                "TricepsThickness": 7,
+                "SerumInsulin": 24,
+                "BMI": 27.36983156,
+                "DiabetesPedigree": 1.3504720469999998,
+                "Age": 43
+            }
+        ]
+    },
+    "GlobalParameters": {}
+}
+
+body = str.encode(json.dumps(data))
+
+url = 'YOUR_ENDPOINT'
+# Replace this with the primary/secondary key, AMLToken, or Microsoft Entra ID token for the endpoint
+api_key = 'YOUR_KEY'
+if not api_key:
+    raise Exception("A key should be provided to invoke the endpoint")
+
+
+headers = {'Content-Type':'application/json', 'Accept': 'application/json', 'Authorization':('Bearer '+ api_key)}
+
+req = urllib.request.Request(url, body, headers)
+
+try:
+    response = urllib.request.urlopen(req)
+
+    result = response.read()
+    print(result.decode("utf8"))
+except urllib.error.HTTPError as error:
+    print("The request failed with status code: " + str(error.code))
+
+    # Print the headers - they include the request ID and the timestamp, which are useful for debugging the failure
+    print("Error Headers:")
+    print(error.info())
+
+    try:
+        error_body = json.loads(error.read().decode("utf8", 'ignore'))
+        print("\nError Body (JSON):")
+        print(json.dumps(error_body, indent=4))
+    except json.JSONDecodeError:
+        print("\nError Body (Non-JSON):")
+        print(error.read().decode("utf8", 'ignore'))
 
 
 
