@@ -1,4 +1,4 @@
-# Az-Ws-Designer-Classification - Diabetes Prediction Project
+# Az-Ws-Designer-Classification - Diabetes Prediction Project ML Workflow
 ## 
 https://www.coursera.org/learn/microsoft-azure-machine-learning-for-data-scientist/supplement/jbcrf/exercise-part-3-explore-and-prepare-data-using-azure-ml-designer
 https://raw.githubusercontent.com/MicrosoftDocs/ml-basics/refs/heads/master/data/diabetes.csv
@@ -29,5 +29,19 @@ PatientID,Pregnancies,PlasmaGlucose,DiastolicBloodPressure,TricepsThickness,Seru
 1662484,6,73,61,35,24,18.74367404,1.074147566,75
 1228510,4,115,50,29,243,34.69215364,0.741159926,59
 --------------------------------------------------------------------------------------------------------------------------------------------
+ Edit the Select Columns in Dataset module. Remove Diabetic from the Selected Columns.
+ Delete the connection between the Score Model module and the Web Service Output.
+
+Add an Execute Python Script module, replacing all of the default python script with the following code (which selects only the PatientID, Scored Labels and Scored Probabilities columns and renames them appropriately):
+import pandas as pd
+def azureml_main(dataframe1 = None, dataframe2 = None):
+    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
+    scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                'Scored Probabilities':'Probability'},
+                        inplace=True)
+    return scored_results
+    -----------------------------------------------------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/74e3a315-4acc-4305-b91d-e49acbe8cb3f)
 ![image](https://github.com/user-attachments/assets/28e33745-7fbb-409c-b6a6-670fc7538ea3)
+![image](https://github.com/user-attachments/assets/a3a3f39f-5995-46a8-940e-4faf25c3f75c)
+
