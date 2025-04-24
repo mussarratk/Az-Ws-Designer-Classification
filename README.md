@@ -203,15 +203,45 @@ Improved Readability and Clarity: The default column names ("Scored Labels", "Sc
 Preparation for Web Service Output (if reconnected later): If you were to reconnect the "Execute Python Script" module to the "Web Service Output", the output of the web service would be a clean and well-formatted JSON containing the "PatientID" (which is implicitly carried through), "DiabetesPrediction", and "Probability" for each patient.
 Flexibility for Further Processing: This step provides a point where you could add more complex logic if needed. For example, you could implement thresholds for the probability to make a definitive "Diabetic" or "Not Diabetic" classification with a certain confidence level, or you could merge the prediction results back with the original patient IDs if those were carried through the pipeline.
 In summary, the Execute Python Script module in this context acts as a data processing step that cleans, formats, and prepares the predictions from the Score Model before they are potentially outputted by a web service or used for other purposes. It enhances the usability and clarity of the prediction results.
-
+   </ul>
 </details> 
- 
+
+
+<details>
+  <ul>
+
+Core Skills & Experience:
+
+Azure Machine Learning Designer Proficiency: Experienced in building, testing, and deploying machine learning pipelines visually using the Azure ML Designer interface.
+End-to-End ML Workflow Implementation: Successfully implemented a complete machine learning workflow from data ingestion and preprocessing to model training, scoring, and deployment.
+Data Preprocessing & Feature Engineering (Designer): Utilized Designer modules for data cleaning, transformation (e.g., normalization), and feature selection to prepare data for model training.
+Model Training & Selection (Designer): Employed Designer modules to train and potentially compare different machine learning models (e.g., Two-Class Logistic Regression) for a classification task.
+Model Evaluation (Designer): Used Designer's evaluation modules to assess model performance using metrics like accuracy, precision, recall, F1-score, confusion matrix, and ROC/AUC.
+Inference Pipeline Creation (Designer): Designed and built real-time inference pipelines in the Designer for making predictions on new, unseen data.
+Web Service Deployment (Azure Container Instance): Successfully deployed the inference pipeline as a real-time web service using Azure Container Instances (ACI) for accessibility by client applications.
+Web Service Testing (Azure ML Studio): Proficient in testing deployed web services directly within the Azure ML Studio environment to validate prediction accuracy and functionality.
+Endpoint Management (Azure ML Studio): Familiar with managing deployed endpoints, including monitoring and potentially redeploying updates.
+JSON Data Handling: Experienced in working with JSON format for input data to and output data from the deployed web service.
+Project Specific Highlights (Adapt these based on your actual project):
+
+Developed an end-to-end diabetes prediction solution using the Azure ML Designer pipeline.
+Built a real-time inference pipeline to predict diabetes risk for new patient data.
+Implemented data normalization techniques within the Designer to improve model training and performance.
+Evaluated the performance of a classification model within the Designer to ensure acceptable prediction accuracy.
+Deployed a fully functional web service via Azure Container Instances for real-time diabetes risk predictions.
+Successfully tested the deployed web service with sample patient data, verifying the predicted outcomes.
+Streamlined the ML lifecycle by leveraging the visual interface of the Azure ML Designer for rapid prototyping and deployment.
+Example Bullet Points for your CV:
+
+Azure ML Designer Pipeline Development: Designed and implemented an end-to-end machine learning pipeline in Azure ML Designer for [mention project goal, e.g., real-time diabetes prediction].
+Data Preprocessing and Model Training (Visual Interface): Utilized Azure ML Designer modules for data cleaning, normalization, and training a [mention specific model, e.g., Two-Class Logistic Regression] model.
+Real-time Inference Pipeline Deployment: Created and deployed a real-time inference pipeline as an Azure Container Instance (ACI) web service for making predictions on new data.
+Web Service Testing and Validation: Conducted thorough testing of the deployed web service within Azure ML Studio, verifying accurate prediction output in JSON format.
+End-to-End ML Solution: Successfully delivered a complete and tested machine learning solution, leveraging the Azure ML Designer for efficient development and deployment.
+   
   </ul>
 
-
-
-
-</detail>
+ </details>
 
 
 
