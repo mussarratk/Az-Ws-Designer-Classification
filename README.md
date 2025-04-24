@@ -166,8 +166,9 @@ except urllib.error.HTTPError as error:
 ![image](https://github.com/user-attachments/assets/d633c221-5f69-49be-a933-29b629ab0b66)
 
 ----------------------------------------------------------------------------
-
-<detail>
+<details> 
+  <summary><b>Step-by-Step Breakdown of the Modified Pipeline and the Role of the Python Script:</b></summary>
+  <ul>
 
 Step-by-Step Breakdown of the Modified Pipeline and the Role of the Python Script:
 
@@ -203,7 +204,9 @@ Preparation for Web Service Output (if reconnected later): If you were to reconn
 Flexibility for Further Processing: This step provides a point where you could add more complex logic if needed. For example, you could implement thresholds for the probability to make a definitive "Diabetic" or "Not Diabetic" classification with a certain confidence level, or you could merge the prediction results back with the original patient IDs if those were carried through the pipeline.
 In summary, the Execute Python Script module in this context acts as a data processing step that cleans, formats, and prepares the predictions from the Score Model before they are potentially outputted by a web service or used for other purposes. It enhances the usability and clarity of the prediction results.
 
-
+</details> 
+ 
+  </ul>
 
 
 
